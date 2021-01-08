@@ -1,10 +1,18 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
-
+	 static ArrayList<Integer> expenses = new ArrayList<Integer>();
+    
     public static void main(String[] args) {
+		
         /*System.out.println("Hello World!");*/
+    	 expenses.add(1000);
+         expenses.add(2300);
+         expenses.add(45000);
+         expenses.add(32000);
+         expenses.add(110);
         System.out.println("\n**************************************\n");
         System.out.println("\tWelcome to TheDesk \n");
         System.out.println("**************************************");
@@ -19,19 +27,14 @@ public class Main {
                 "5. I wish to search for a particular expenditure",
                 "6. Close the application"
         };
-        int[] arr1 = {1,2,3,4,5,6};
-        int  slen = arr1.length;
+        
+        int  slen = arr.length;
         for(int i=0; i<slen;i++){
             System.out.println(arr[i]);
             // display the all the Strings mentioned in the String array
         }
         ArrayList<Integer> arrlist = new ArrayList<Integer>();
-        ArrayList<Integer> expenses = new ArrayList<Integer>();
-        expenses.add(1000);
-        expenses.add(2300);
-        expenses.add(45000);
-        expenses.add(32000);
-        expenses.add(110);
+       
         expenses.addAll(arrlist);
         System.out.println("\nEnter your choice:\t");
         Scanner sc = new Scanner(System.in);
@@ -47,7 +50,7 @@ public class Main {
                     case 2:
                         System.out.println("Enter the value to add your Expense: \n");
                         int value = sc.nextInt();
-                        expenses.add(value);
+                        arrlist.add(value);
                         System.out.println("Your value is updated\n");
                         expenses.addAll(arrlist);
                         System.out.println(expenses+"\n");
@@ -90,11 +93,23 @@ public class Main {
             }
     private static void searchExpenses(ArrayList<Integer> arrayList) {
         int leng = arrayList.size();
+        Scanner sc1 = new Scanner(System.in);
         System.out.println("Enter the expense you need to search:\t");
+        int value = sc1.nextInt();
+        if (arrayList.contains(value)) {
+        	System.out.println(value+ " found in the list at "+ arrayList.indexOf(value));
+        }else {
+        	System.out.println(value+ " Not found in the list .");
+        }
+       //sc1.close();
         //Complete the method
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
+        Collections.sort(arrayList);
+        for (Integer i : arrayList) {
+        	System.out.println("Expense: "+ i);
+        }
        //Complete the method. The expenses should be sorted in ascending order.
     }
 }
