@@ -92,7 +92,7 @@ public class Main {
         System.out.println("Closing your application... \nThank you!");
             }
     private static void searchExpenses(ArrayList<Integer> arrayList) {
-        int leng = arrayList.size();
+        
         Scanner sc1 = new Scanner(System.in);
         System.out.println("Enter the expense you need to search:\t");
         int value = sc1.nextInt();
@@ -105,7 +105,7 @@ public class Main {
         //Complete the method
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
-        int arrlength =  arrayList.size();
+       
         Collections.sort(arrayList);
         for (Integer i : arrayList) {
         	System.out.println("Expense: "+ i);
